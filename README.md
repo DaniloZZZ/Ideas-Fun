@@ -5,7 +5,7 @@ Please contact [me](lykov.tech) if you know similar things implemented by others
 
 # Python
 - [ ] Modelling of diffusion equation where inital distribution is an arbitrary photo
-  - [ ] 1-d case
+  - [ ] 1-d case _progress: 2/5_
   - [ ] 2-d (image) case
   - [ ] web GUI (?)
   
