@@ -16,6 +16,7 @@ Please contact [me](lykov.tech) if you know similar things implemented by others
 - [ ] Get nice girls pics from Tinder/Vk and auto-find me a gf 😎
 - [ ] Train RNN on waveform or spectrum of song
 - [ ] Track day activity and record self-esteem. Predict the mood. (Data: sms from banks, messages in soc.nets, browser activity, loc data.)
+- [ ] Train network on 1 image pes few classes, then 10 images all classes, then 100 images, then all. The idea: to initialize properly via 1st fast iterations
 
 ## Jupyter
 - [ ] Create a package for communicating between notebooks.
