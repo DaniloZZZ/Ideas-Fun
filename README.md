@@ -1,12 +1,12 @@
 # Ideas-Fun
-A backlog of things I think deserve being implemented. **If you like** smth and want to see results or develop yourself I beg u to **write [me](lykov.tech)**.  I will either increasse priority or help in writing. 
+A backlog of things I think deserve being implemented. **If you like** smth and want to see results or develop yourself I beg u to **write [me](http://lykov.tech)**.  I will either increasse priority or help in writing. 
 
-Please contact [me](lykov.tech) if you know similar things implemented by others.
+Please contact [me](http://lykov.tech) if you know similar things implemented by others.
 
 # Python
 - [ ] Modelling of diffusion equation where inital distribution is an arbitrary photo
-  - [ ] 1-d case:: _progress: 2/5_
-  - [ ] 2-d (image) case
+  - [x] 1-d case:: _progress: 3/5_
+  - [x] 2-d (image) case
   - [ ] web GUI (?)
   
 - [ ] Modellling of laplace equation (Wave eq) where inital state is an arbitrary song
