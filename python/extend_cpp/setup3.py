@@ -2,10 +2,10 @@
 # This works with python3
 from distutils.core import setup, Extension
 
-mod1 = Extension('spam', sources=['spammodule3.c'])
+mod1 = Extension('cdan', sources=['cdanmodule3.c'])
 
 setup(
-    name='spam',
+    name='cdan',
     version='0.1',
     description='a tutor for embedding c in python',
     ext_modules=[mod1]
