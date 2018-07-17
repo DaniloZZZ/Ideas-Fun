@@ -21,7 +21,7 @@ spam_system(PyObject *self,PyObject *args)
 		return NULL;
 	}
 	*/
-	return PyLong_FromLong(sts);
+	//return PyLong_FromLong(sts);
 	return PyBuildValue("i",sts);
 }
 
