@@ -5,10 +5,10 @@
 
 float * SIMD_add(float * a, float *b)
 {
-	printf("simd adding two vecs at %p, %p\n",a,b);
+	//printf("simd adding two vecs at %p, %p\n",a,b);
 	static float res[4];
 	// Perform vector addition
-	// SSE registers are for 4-len vectors
+	// SSE registers are for 4-len float vectors
 	//
 	// This can be optimised for memory
 	__asm__ volatile
@@ -27,10 +27,11 @@ float * SIMD_add(float * a, float *b)
 
 float * just_add(float * a, float *b)
 {
-	printf("adding vecs in loop at %p, %p\n",a,b);
+	//printf("adding vecs in loop at %p, %p\n",a,b);
 	// TODO:does value wiped without static?
 	static float res[4];
-	for (short i=0;i<4;i++)
+	//for (int i=0;i<4;i++)
+	for (int i=3;i>=0; --i)
 	{
 		res[i] = a[i]+b[i];
 	}

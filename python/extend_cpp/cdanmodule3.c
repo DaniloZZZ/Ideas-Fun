@@ -8,18 +8,8 @@
 
 static PyObject *SpamError;
 
-static PyObject *
-cdan_simd_add(PyObject *self,PyObject *arga)
+void Parce_List(PyObject *pya,PyObject *pyb, float *a,float *b)
 {
-	const PyObject *pya;
-	const PyObject *pyb;
-	PyObject *ret;
-	ret = PyList_New(4);
-	int sts;
-	float a[4] = {1.2, 3, 0, -4.};
-	float b[4] = {-1.2, 9, 1.2, -8.};
-	if (!PyArg_ParseTuple(arga, "O|O:add", &pya,&pyb))
-		return NULL;
 	PyObject *v;
 	double x;
 	for (char i =0; i<4;i++)
@@ -32,12 +22,23 @@ cdan_simd_add(PyObject *self,PyObject *arga)
 		x = PyFloat_AsDouble(v);
 		b[i] = x;
 	}
+}
+
+static PyObject *
+cdan_simd_add(PyObject *self,PyObject *arga)
+{
+	const PyObject *pya;
+	const PyObject *pyb;
+	PyObject *ret;
+	ret = PyList_New(4);
+	float a[4];
+	float b[4];
+	if (!PyArg_ParseTuple(arga, "O|O", &pya,&pyb))
+		return NULL;
+	Parce_List(pya,pyb,a,b);
 
 	float * c;
 	c = SIMD_add(a,b);
-
-	//printf("%s plus %s is %s\n",
-	//		vec3s(a),vec2s(b),vec2s(c));
 
 	for (char i =0; i<4;i++)
 	{
@@ -54,29 +55,14 @@ cdan_loop_add(PyObject *self,PyObject *arga)
 	const PyObject *pyb;
 	PyObject *ret;
 	ret = PyList_New(4);
-	int sts;
-	float a[4] = {1.2, 3, 0, -4.};
-	float b[4] = {-1.2, 9, 1.2, -8.};
-	if (!PyArg_ParseTuple(arga, "O|O:add", &pya,&pyb))
+	float a[4];
+	float b[4];
+	if (!PyArg_ParseTuple(arga, "O|O", &pya,&pyb))
 		return NULL;
-	PyObject *v;
-	double x;
-	for (char i =0; i<4;i++)
-	{
-		v = PyList_GetItem(pya, i);
-		x = PyFloat_AsDouble(v);
-		a[i] = x;
-
-		v = PyList_GetItem(pyb, i);
-		x = PyFloat_AsDouble(v);
-		b[i] = x;
-	}
+	Parce_List(pya,pyb,a,b);
 
 	float * c;
 	c = just_add(a,b);
-
-	//printf("%s plus %s is %s\n",
-	//		vec3s(a),vec2s(b),vec2s(c));
 
 	for (char i =0; i<4;i++)
 	{

@@ -2,7 +2,11 @@
 # This works with python3
 from distutils.core import setup, Extension
 
-mod1 = Extension('cdan', sources=['cdanmodule3.c'])
+mod1 = Extension('cdan',
+                 sources=['cdanmodule3.c'],
+                 extra_compile_args = ["-O3"],
+                )
+
 
 setup(
     name='cdan',
