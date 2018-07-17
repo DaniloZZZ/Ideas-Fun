@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 // This code is for utilising SIMD operations
 // Danil Lykov, 07/2018
 //
@@ -40,17 +42,19 @@ float * just_add(float * a, float *b)
 }
 char * vec2s(float *v)
 {
-	char *s = malloc(30);
+	char *s = (char*)malloc(30);
+	char t[10];
 	if (!s)
 		return NULL;
 
 	s[0]='[';
-	for (char i=0; i<4; i++){
+	for (int i=0; i<4; i++){
 		// This fails when called from python but ok from unix
 		// TODO: get rid of self referencing s
-		sprintf(s, "%s %4.2f",s,v[i]);
+		sprintf(t, " %4.2f,",v[i]);
+		strcat(s,t);
 	}
-	sprintf(s, "%s]",s);
+	strcat(s, "]");
 	return s;
 }
 

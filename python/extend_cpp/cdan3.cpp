@@ -8,7 +8,7 @@
 
 static PyObject *SpamError;
 
-void Parce_List(const PyObject *pya,const PyObject *pyb, float *a,float *b)
+void Parce_List(PyObject *pya,PyObject *pyb, float *a,float *b)
 {
 	PyObject *v;
 	double x;
@@ -27,8 +27,8 @@ void Parce_List(const PyObject *pya,const PyObject *pyb, float *a,float *b)
 static PyObject *
 cdan_simd_add(PyObject *self,PyObject *arga)
 {
-	const PyObject *pya;
-	const PyObject *pyb;
+	PyObject *pya;
+	PyObject *pyb;
 	PyObject *ret;
 	ret = PyList_New(4);
 	float a[4];
@@ -51,8 +51,8 @@ cdan_simd_add(PyObject *self,PyObject *arga)
 static PyObject *
 cdan_loop_add(PyObject *self,PyObject *arga)
 {
-	const PyObject *pya;
-	const PyObject *pyb;
+	PyObject *pya;
+	PyObject *pyb;
 	PyObject *ret;
 	ret = PyList_New(4);
 	float a[4];
@@ -118,7 +118,7 @@ PyInit_cdan(void)
 	PyObject *m;
 	m = PyModule_Create(&cdanmod);
 	if (m == NULL)
-		return;
+		Py_RETURN_NONE;
 	//SpamError = PyErr_NewException("cdan.error", NULL, NULL);
 	//Py_INCREF(SpamError);
 	//PyModule_AddObject(m, "error", SpamError);
