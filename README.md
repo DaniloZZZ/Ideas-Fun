@@ -35,7 +35,7 @@ Please contact me if you know similar things implemented by others.
 - [ ] Script to generate boilerplate code for service: express.js server, mongodb, react+coffee gui - based on .yml of Items
   - [ ] sh script generating .coffee for displaying collection Item
   - [ ] server.js code jenerating
-  - [ ] mongodb init from .yml
+  - [x] mongodb init from .yml
   - [ ] Dockerfile (?)
   - [ ] pack this as repo, publish, write docs
   
