@@ -1,7 +1,7 @@
 # Ideas-Fun
 A backlog of things I think deserve being implemented. **If you like** smth and want to see results or develop yourself I beg u to **write [me](http://lykov.tech)**.  I will either increasse priority or help in writing. 
 
-Please contact [me](http://lykov.tech) if you know similar things implemented by others.
+Please contact me if you know similar things implemented by others.
 
 # Python
 - [ ] Modelling of diffusion equation where inital distribution is an arbitrary photo
@@ -10,6 +10,8 @@ Please contact [me](http://lykov.tech) if you know similar things implemented by
   - [ ] web GUI (?)
   
 - [ ] Modellling of laplace equation (Wave eq) where inital state is an arbitrary song
+
+- [x] Using Advanced Vector Extentions - a set of processor instructions for vector operations - embes asm to c++ and call c++ from python
 
 ## ML
 - [ ] Train conv net on PCA representation of datasets.
@@ -25,6 +27,7 @@ Please contact [me](http://lykov.tech) if you know similar things implemented by
 ## Bots
 - [ ] [Tgflow](http://github.com/DaniloZZZ/tgflow)  - add _(web? electron?)_ gui for designing bots.  
 - [ ] Port tgflow to Slack
+- [x] Add tgflow support for VK
 - [ ] Bot for GoalNet
 
 # JavaScript
