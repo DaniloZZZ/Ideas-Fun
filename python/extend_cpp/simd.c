@@ -7,10 +7,9 @@ float * SIMD_add(float * a, float *b)
 {
 	//printf("simd adding two vecs at %p, %p\n",a,b);
 	static float res[4];
-	// Perform vector addition
-	// SSE registers are for 4-len float vectors
 	//
-	// This can be optimised for memory
+	// Perform vector addition using AVX(Advanced Vector Extensions)
+	// SSE registers are for 4-len float vectors
 	__asm__ volatile
 	(
 	 "movups %[a], %%xmm0\n\t"
@@ -21,7 +20,7 @@ float * SIMD_add(float * a, float *b)
 	 : [a]"m"(*a), [b]"m"(*b)
 	 : "%xmm0","%xmm1"
 	);
-
+	// This can be optimised for memory
 	return res;
 }
 
@@ -30,6 +29,8 @@ float * just_add(float * a, float *b)
 	//printf("adding vecs in loop at %p, %p\n",a,b);
 	// TODO:does value wiped without static?
 	static float res[4];
+
+	// The downcounting variant seems to be not optimised by GCC
 	//for (int i=0;i<4;i++)
 	for (int i=3;i>=0; --i)
 	{
